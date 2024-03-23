@@ -12,7 +12,7 @@
 <p>3. XRDP.txt</p>
 <p>4. Samba.txt</p>
 <p>5. MapNetworkDrive.txt</p>
-<p>5. PlexMediaServer.txt</p>
+<p>6. PlexMediaServer.txt</p>
 
 ## 📩 Downloads
 
