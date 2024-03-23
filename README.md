@@ -1,6 +1,6 @@
 ## 📃 Summary
 <p>
-  This is a text-based walkthrough of how to install Plex Media Server on Ubuntu Linux. Basic knowledge of using Linux terminal and understanding group permissions is required.
+  This is a text-based walkthrough of how to install Plex Media Server on Ubuntu Linux. Basic knowledge of using the Linux terminal and group permissions is required.
 </p>
 
 <p>
