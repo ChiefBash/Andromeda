@@ -1,7 +1,23 @@
 ## 📃 Summary
 <p>
-  
+  This is a text-based walkthrough of how to install Plex Media Server on Ubuntu Linux. Basic knowledge of using Linux terminal and understanding group permissions is required.
 </p>
+
+<p>
+  Use the following order for the best experience of installation/configuration:
+</p>
+
+<p>1. OpenSSH.txt</p>
+<p>2. Powershell.txt</p>
+<p>3. XRDP.txt</p>
+<p>4. Samba.txt</p>
+<p>5. MapNetworkDrive.txt</p>
+
+## 📩 Downloads
+
+<p>• OpenSSH - Establishing a secure connection to Linux using Powershell (CLI)</p>
+<p>• XRDP - Using Windows Remote Desktop Connection to remote in Linux (GUI) <i>[Windows 10/11 Pro is required for this step.]</i></p>
+<p>• Samba - FIle sharing protocol to transfer files from Windows to Linux and vice versa</p>
 
 ## 🧰 Languages & Tools
 
