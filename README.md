@@ -1,6 +1,6 @@
 ## 📃 Summary
 <p>
-  This is a showcase of my current homelab setup that utulizes virtualization and Arch Linux.
+  This is a showcase of my current homelab setup that utilizes virtualization and Arch Linux as the operating system. Things are subject to change at any point.
 </p>
 
 ## 🧰 Languages & Tools
