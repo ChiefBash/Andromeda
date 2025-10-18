@@ -16,6 +16,7 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 
 ---
 
+### Online Installation Method
 <p>
 <b>2)</b> Select "Online" installation method for up-to-date patches. 
 </p>
