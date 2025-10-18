@@ -1,0 +1,47 @@
+services:
+  filebot:
+    image: jlesage/filebot:latest
+    container_name: filebot
+    ports:
+      - 5800:5800
+    volumes:
+      - /home/chiefbash/docker/filebot/config:/config:rw
+      - /mnt/HDD0/plex:/storage:rw
+    restart: unless-stopped
+
+  handbrake:
+    image: jlesage/handbrake:latest
+    container_name: handbrake
+    ports:
+      - 5810:5810
+    volumes:
+      - /home/chiefbash/docker/handbrake/config:/config:rw
+      - /mnt/HDD15:/storage:ro
+      - /mnt/HDD15/handbrake/watch:/watch:rw
+      - /mnt/HDD15/handbrake/complete:/output:rw
+      - /mnt/HDD15/handbrake/trash:/trash:rw
+    restart: unless-stopped
+
+  makemkv:
+    image: jlesage/makemkv:latest
+    container_name: makemkv
+    ports:
+      - 5820:5820
+    volumes:
+      - /home/chiefbash/docker/makemkv/config:/config:rw
+      - /mnt/HDD15:/storage:ro
+      - /mnt/HDD15/makemkv/encode:/output:rw
+    devices:
+      - /dev/sr0:/dev/sr0
+      - /dev/sg2:/dev/sg2
+    restart: unless-stopped
+
+  mkvtoolnix:
+    image: jlesage/mkvtoolnix:latest
+    container_name: mkvtoolnix
+    ports:
+      - 5830:5830
+    volumes:
+      - /home/chiefbash/docker/mkvtoolnix/config:/config:rw
+      - /mnt/HDD15/makemkv/encode:/storage:rw
+    restart: unless-stopped
