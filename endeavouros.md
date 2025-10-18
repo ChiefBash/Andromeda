@@ -1,4 +1,4 @@
-# EndeavourOS
+<h1>EndeavourOS</h1>
 
 ## Why?
 <p>
