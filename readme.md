@@ -1,6 +1,6 @@
 ## 📃 Summary
 <p>
-  This is a showcase of my current homelab setup that utilizes virtualization and Arch Linux as the operating system. Things are subject to change at any point.
+  This is a showcase of my current homelab setup that utilizes a multitude of services including Docker containerization and EndeavourOS (GNOME) Arch Linux as the operating system.
 </p>
 
 ## 🧰 Languages & Tools
