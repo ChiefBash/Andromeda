@@ -7,6 +7,9 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 
 <b><i>INSTALLATION</i></b>
 <p>
-
+<b>1)</b> Click "Start the Installer". 
 </p>
 <center><img width="667" height="479" src="https://github.com/user-attachments/assets/13b86729-8768-422b-9837-ada67c975273" /></center>
+
+---
+
