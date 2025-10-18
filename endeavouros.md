@@ -9,4 +9,4 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 <p>
 
 </p>
-<img width="667" height="479" alt="EndeavourOS - Step 1" src="https://github.com/user-attachments/assets/13b86729-8768-422b-9837-ada67c975273" />
+<center><img width="667" height="479" src="https://github.com/user-attachments/assets/13b86729-8768-422b-9837-ada67c975273" /></center>
