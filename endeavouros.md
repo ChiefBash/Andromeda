@@ -66,3 +66,11 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 <b>7)</b> The default packages are fine at this stage. An optional thing to do is select "Printing Support" and an LTS kernel to install alongside, but this isn't absolutely necessary; click "Next". 
 </p>
 <img width="1199" height="743" src="https://github.com/user-attachments/assets/dbd5169c-2d4b-499d-bda5-e4a1ceb5dabf" />
+
+---
+
+<b><i>BOOTLOADER</i></b>
+<p>
+<b>8)</b> Ensure "GRUB" is selected; click "Next". 
+</p>
+<img width="1196" height="740"  src="https://github.com/user-attachments/assets/d071d753-2a43-4ebf-a433-56e6b90e609c" />
