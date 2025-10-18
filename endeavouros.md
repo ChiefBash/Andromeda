@@ -71,6 +71,46 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 
 <b><i>BOOTLOADER</i></b>
 <p>
-<b>8)</b> Ensure "GRUB" is selected; click "Next". 
+<b>8)</b> Ensure "Grub Bootloader" is selected; click "Next". 
 </p>
 <img width="1196" height="740"  src="https://github.com/user-attachments/assets/d071d753-2a43-4ebf-a433-56e6b90e609c" />
+
+---
+
+<b><i>PARTITIONS</i></b>
+<p>
+<b>9)</b> Ensure THE 500GB NVME drive is selected and click on "Erase disk"; click "Next". 
+</p>
+<img width="1198" height="740" src="https://github.com/user-attachments/assets/c0855441-ac8e-4c09-adc5-eef96117d379" />
+
+---
+
+<b><i>USERS</i></b>
+<p>
+<b>10)</b> Enter "Full Name" as <b>ChiefBash</b>, enter "Computer Name" as <b>andromeda</b>, set a strong password; click "Next". 
+</p>
+<img width="1198" height="740" src="https://github.com/user-attachments/assets/d84ba681-73b2-4331-a677-dcc203a69995" />
+
+---
+
+<b><i>SUMMARY</i></b>
+<p>
+<b>11)</b> Click "Install". 
+</p>
+<img width="1198" height="740" src="https://github.com/user-attachments/assets/f24310f9-1d76-4d4e-85ae-857d278bd9e0" />
+
+---
+
+<b><i>INSTALLL NOW</i></b>
+<p>
+<b>13)</b> Click "Install Now". 
+</p>
+<img width="499" height="146" src="https://github.com/user-attachments/assets/5904d703-cd1e-4c1c-a2b5-af5e5e92c44a" />
+
+---
+
+<b><i>FINISH</i></b>
+<p>
+<b>12)</b> After the installation process is complete, check "Restart Now". Click "Next". 
+</p>
+<img width="1199" height="740" src="https://github.com/user-attachments/assets/15c8c432-4127-4f39-9dc3-376a3379a2d6" />
