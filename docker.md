@@ -1,5 +1,5 @@
 ## DOCKER
-<b><i>WHY?</i></b>
+### WHY?
 <p>
 
 </p>
@@ -8,39 +8,31 @@
 
 ### INSTALLATION
 
-<b><i>UPDATE ENDEAVOUROS</i></b>
+### UPDATE ENDEAVOUROS
 
 ```
 sudo pacman -Syyu
 ```
 
----
-
-<b><i>BACKUP</i></b>
+### BACKUP
 
 <p>
 Before installing Docker, create a backup on Timeshift, just in case something breaks.
 </p>
 
----
-
-<b><i>INSTALL DOCKER</i></b>
+### INSTALL DOCKER
 
 ```
 sudo pacman -Syu docker
 ```
 
----
-
-<b><i>INSTALL DOCKER</i></b>
+### INSTALL DOCKER
 
 ```
 sudo pacman -Syu docker
 ```
 
----
-
-<b><i>START & ENABLE DOCKER</i></b>
+### START & ENABLE DOCKER
 
 ```
 sudo systemctl start docker
@@ -49,17 +41,13 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
----
-
-<b><i>START & ENABLE DOCKER</i></b>
+### START & ENABLE DOCKER
 
 ```
 sudo usermod -aG docker chiefbash
 ```
 
----
-
-<b><i>INSTALL DOCKER COMPOSE</i></b>
+### INSTALL DOCKER COMPOSE
 
 ```
 sudo pacman -Syu docker-compose
