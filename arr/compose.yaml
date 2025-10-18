@@ -79,8 +79,8 @@ services:
       - TZ=America/Chicago
     volumes:
       - /home/chiefbash/docker/readarr/config:/config
-      - /mnt/HDD1/books/:/books
-      - /mnt/HDD2/downloads:/downloads
+      - /mnt/HDD0/books/:/books
+      - /mnt/HDD1/downloads:/downloads
     ports:
       - 8787:8787
     restart: unless-stopped
@@ -98,4 +98,5 @@ services:
       - /mnt/HDD1/downloads:/downloads
     ports:
       - 8989:8989
+
     restart: unless-stopped
