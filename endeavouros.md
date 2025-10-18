@@ -15,7 +15,9 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 <b>1)</b> Click "Start the Installer". 
 </p>
 <img width="667" height="479" src="https://github.com/user-attachments/assets/13b86729-8768-422b-9837-ada67c975273" />
-<br>
+
+---
+
 <b><i>ONLINE INSTALLATION METHOD</i></b>
 
 <p>
@@ -23,12 +25,16 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 </p>
 <img width="598" height="207" src="https://github.com/user-attachments/assets/b3f3f232-30c4-4b8a-a387-94e85764bd99" />
 
+---
+
 <b><i>LANGUAGE</i></b>
 
 <p>
 <b>3)</b> Ensure "American English" is selected and click "Next". 
 </p>
 <img width="1198" height="742" src="https://github.com/user-attachments/assets/deeb5f86-a46f-447f-9693-9dff7c4171bb" />
+
+---
 
 <b><i>KEYBOARD</i></b>
 
