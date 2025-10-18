@@ -7,7 +7,9 @@ After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some 
 
 ---
 
-<b><i>INSTALLATION</i></b>
+### INSTALLATION
+
+<b><i>WELCOME</i></b>
 
 <p>
 <b>1)</b> Click "Start the Installer". 
