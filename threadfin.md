@@ -1,18 +1,10 @@
 <img width="285" height="80" src="https://github.com/user-attachments/assets/875960ea-1f76-4ea7-81b1-cc3379d5dccf" />
 
-<img width="810" height="217" src="https://github.com/user-attachments/assets/7dd28f03-82de-4526-9dd1-14fb62510055" />
-<p>
-</p>
-
----
-
 <img width="810" height="217" src="https://github.com/user-attachments/assets/6b9c4e2c-4697-40f2-8a4f-1da00f97b941" />
 
-### TORRENT/COMPOSE.YAML
+## TORRENT/COMPOSE.YAML
 
-<p>
-Ensure the compose.yaml file of the torrent stack in Portainer is accurate. This is the section of code if necessary:
-</p>
+<p>Ensure the compose.yaml file of the torrent stack in Portainer is accurate. This is the section of code if necessary:</p>
 
 ```
 threadfin:
@@ -35,9 +27,7 @@ threadfin:
     restart: unless-stopped
 ```
 
-<p>
-Under the Gluetun service, make sure port 34400 is specified in the port section.
-</p>
+<p>Under the Gluetun service, make sure port 34400 is specified in the port section.</p>
 
 ```
 service:
@@ -46,16 +36,91 @@ service:
       - 34400:34400
 ```
 
-### PLAYLIST
+## PLAYLIST
+<p>Click 'New' in the top-left.</p>
+<img width="110" height="57" src="https://github.com/user-attachments/assets/5dbcf806-9049-43c4-bff1-5ba8ac6cf3c4" />
 
-### XMLTV
+<p>Select 'M3U' and click 'Next'.</p>
+<img width="1133" height="227" src="https://github.com/user-attachments/assets/772b10ae-cff8-487c-b744-22d11cce2059" />
 
-### FILTER
+<p>Add a name, description (optional), add the M3U file and select 2 for the number of tuners/streams. Click 'Update' and 'Save' when complete.</p>
+<img width="1127" height="546" src="https://github.com/user-attachments/assets/419c992e-e3aa-4bf6-8656-87043b1e2ebb" />
 
-### MAPPING
+## XMLTV
+<p>Click 'New' in the top-left.</p>
+<img width="110" height="57" src="https://github.com/user-attachments/assets/5dbcf806-9049-43c4-bff1-5ba8ac6cf3c4" />
 
-### USERS
+<p>Add a name, description (optional) and the XMLTV link. Click 'Update' and 'Save' when complete.</p>
+<img width="1130" height="435" src="https://github.com/user-attachments/assets/d35456fd-61c6-4aec-9595-22468bd86efd" />
 
-### SETTINGS
+## MAPPING
+<p>Once the PLAYLIST and XMLTV steps are complete, the channels will begin to populate in the MAPPING section. It takes about 5 minutes for the data to transfer. Once the channels are imported, the channel numbers can be changed/updated. Align the numbers to a cable provider (DISH, AT&T, DirecTV, etc.). It may be best to import the DVR in Plex a few times with different providers first to get an idea of what numbering scheme works best. It also helps to do one channel at a time so it isn't overwhelming.</p>
 
-### IMPORT TO PLEX
+<p>To activate the channel, follow these steps:</p>
+<p><b>Active</b>: ✅</p>
+<p><b>Channel name</b>: Whatever you want</p>
+<p><b>Channel description</b>: BLANK (optional)</p>
+<p><b>Logo URL</b>: Will populate automatically, no change needs to be made.</p>
+<p><b>Update Channel Logo</b>: ❌</p>
+<p><b>EPG Category</b>: Select the most relevant one. If one doesn't match, select '-'.</p>
+<p><b>XMLTV File</b>: The name of the XML file created eariler in the XMLTV section.</p>
+<p><b>XMLTV Channel</b>: Not necessary to add, but something I personally do for peace of mind.</p>
+
+<p>Click 'Done' in the bottom-right when complete.</p>
+<img width="427" height="62" src="https://github.com/user-attachments/assets/3d6c9e0c-7c31-4503-b7d5-a91c4ef725b6" />
+
+<p>Click 'Save' in the top-left to save all changes.</p>
+<img width="255" height="63" src="https://github.com/user-attachments/assets/73f4c0eb-8bde-41ff-9278-ee2039cad1c6" />
+
+## USERS
+<p>An administrator account is created when initially setting up Threadfin. Additional users can be added with the following steps:</p>
+
+<p>Click 'New' in the top-left.</p>
+<img width="110" height="57" src="https://github.com/user-attachments/assets/5dbcf806-9049-43c4-bff1-5ba8ac6cf3c4" />
+
+<p>Enter a username, strong password and password again to confirm.</p>
+<p><b>Web Access</b>: ✅</p>
+<p><b>PMS Access</b>: ❌</p>
+<p><b>M3U Access</b>: ❌</p>
+<p><b>XML Access</b>: ❌</p>
+<p><b>API Access</b>: ❌</p>
+
+<p>Click 'Save' in the bottom-right when complete.</p>
+<img width="246" height="61" src="https://github.com/user-attachments/assets/c92ba9ac-4b01-4227-b0d9-022a605521f8" />
+
+## SETTINGS
+<p><b>Automatic uppdate of Threadin</b>: ✅ (Watchtower will also update the Docker container if necessary)</p>
+<p><b>SSDP</b>: ✅</p>
+<p><b>Number of Tuners</b>: 2 (Equal to the amount concurrent live streams. It will be different depending on the provider.)</p>
+<p><b>EPG Source</b>: XEPG</p>
+<p><b>API Interface</b>: ❌</p>
+<p><b>Schedule for updating (Playlist, XMLTV, Backup)</b>: 0000 (Occurs at midnight)</p>
+<p><b>Updates all files at startup</b>: ✅</p>
+<p><b>Location for temporary files</b>: /tmp/threadfin/</p>
+<p><b>Image Caching</b>: ✅</p>
+<p><b>Omit port</b>: ❌</p>
+<p><b>Replace missing program images</b>: ✅</p>
+<p><b>Replace PPV channels title/desc</b>: ✅</p>
+<p><b>Enable Non-ASCII</b>: ❌</p>
+<p><b>Use HTTPS</b>: ❌</p>
+<p><b>Stream Buffer</b>: FFmpeg</p>
+<p><b>Buffer Size</b>: 0.5 MB</p>
+<p><b>Store Buffer in RAM</b>: ✅</p>
+<p><b>User Agent</b>: BLANK (will not work otherwise)</p>
+<p><b>WEB Authentication</b>: ✅</p>
+<p><b>PMS Authentication</b>: ❌</p>
+<p><b>M3U Authentication</b>: ❌</p>
+<p><b>XML Authentication</b>: ❌</p>
+<p><b>API Authentication</b>: ❌</p>
+<p>Once done, click Save at the top-left.</p>
+<img width="377" height="68" src="https://github.com/user-attachments/assets/7e506de6-4f0e-4529-b563-3acb20180b55" />
+
+## DVR INFO
+<p>Click 'Server Information' in the top-right.</p>
+<img width="197" height="56" src="https://github.com/user-attachments/assets/e53b1b0b-b8db-40c0-98f3-4a11869286fc" />
+
+<p>Look for 'DVR IP'.</p>
+<img width="233" height="68" src="https://github.com/user-attachments/assets/56d151a1-94c8-42f1-89f3-11983dcbbe1b" />
+<p>This IP address (which will be different on each intial setup) is what needs to be imported in Plex to work.</p>
+
+## IMPORT TO PLEX
