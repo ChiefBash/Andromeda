@@ -30,7 +30,6 @@ services:
       timeout: 20s
       retries: 5
     restart: unless-stopped
-
   deunhealth:
     image: qmcgaw/deunhealth
     container_name: deunhealth
@@ -42,7 +41,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
-
   firefox:
     image: lscr.io/linuxserver/firefox:latest
     container_name: firefox
@@ -74,7 +72,6 @@ services:
       start_period: 20s
       timeout: 10s
     restart: unless-stopped
-
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
@@ -96,7 +93,6 @@ services:
       start_period: 20s
       timeout: 10s
     restart: unless-stopped
-
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
@@ -123,7 +119,6 @@ services:
       start_period: 20s
       timeout: 10s
     restart: unless-stopped
-
   threadfin:
     image: mgoerentz/threadfin:latest
     container_name: threadfin
@@ -142,5 +137,3 @@ services:
         condition: service_healthy
         restart: true
     restart: unless-stopped
-
-
