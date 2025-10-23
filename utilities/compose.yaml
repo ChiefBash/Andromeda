@@ -8,8 +8,8 @@ services:
       - TZ=America/Chicago
     volumes:
       - /mnt:/srv
-      - /home/chiefbash/docker/filebrowser/filebrowser.db:/filebrowser.db 
-      - /home/chiefbash/docker/filebrowser/settings.json:/settings.json
+      - /home/chiefbash/docker/filebrowser/filebrowser.db:/filebrowser.db # "touch filebrowser.db" in /home/chiefbash/docker/filebrowser
+      - /home/chiefbash/docker/filebrowser/settings.json:/settings.json # "touch seetings.json" in /home/chiefbash/docker/filebrowser
     ports:
       - 8095:80
     restart: unless-stopped
@@ -66,3 +66,4 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
+
