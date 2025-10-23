@@ -25,7 +25,6 @@
       # - /mnt/HDD0/plex/halloween:/halloween
       #- /mnt/HDD0/plex/christmas:/christmas
     restart: unless-stopped
-
   tautulli:
     image: lscr.io/linuxserver/tautulli:latest
     container_name: tautulli
@@ -38,4 +37,3 @@
     ports:
       - 8181:8181
     restart: unless-stopped
-
