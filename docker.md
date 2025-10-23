@@ -23,7 +23,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-## START & ENABLE DOCKE
+## PERMISSION CHANGE
 ```
 sudo usermod -aG docker chiefbash
 ```
