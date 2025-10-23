@@ -123,6 +123,8 @@ services:
     image: mgoerentz/threadfin:latest
     container_name: threadfin
     network_mode: service:gluetun
+    labels:
+      - deunhealth.restart.on.unhealthy=true
     environment:
       - PUID=1000
       - PGID=1000
@@ -130,8 +132,6 @@ services:
     volumes:
       - /home/chiefbash/docker/threadfin/config:/home/threadfin/conf
       - /home/chiefbash/docker/threadfin/tmp:/tmp/threadfin:rw
-    labels:
-      - deunhealth.restart.on.unhealthy=true
     depends_on:
       gluetun:
         condition: service_healthy
