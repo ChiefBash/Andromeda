@@ -2,7 +2,7 @@
 
 <img width="810" height="217" alt="Installation" src="https://github.com/user-attachments/assets/de7e8748-7d84-4780-b8d4-fe67adfac77d" />
 
-### UPDATE ENDEAVOUROS
+## UPDATE ENDEAVOUROS
 ```
 sudo pacman -Syyu
 ```
