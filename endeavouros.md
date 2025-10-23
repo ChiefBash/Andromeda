@@ -1,13 +1,13 @@
-## ENDEAVOUROS
+<img width="690" height="184" src="https://github.com/user-attachments/assets/41cbb956-ef56-4181-a6e7-cbc530c5d05d" />
 
-### WHY?
+<img width="810" height="217" src="https://github.com/user-attachments/assets/9d1802d6-2e31-4bfb-a074-eeaa406b1cad" />
 <p>
 After using both Ubuntu 22.02 (Jammy Jellyfish) and GNOME Arch Linux after some years, I ended up liking both operating systems. They both have features that I enjoy, especially about Arch being so lightweight on hardware resources (sometimes, but for the most part compared to Ubuntu). I decided to go with the GNOME version of EndeavourOS (https://endeavouros.com) as the main operating system for my computer as it looks very nice aesthetically in my personal opinion. The instructions & screenshots in the following installation steps may not be currently accurate, but represent the general process of setting up the operating system.
 </p>
 
 ---
 
-## INSTALLATION
+<img width="810" height="217" src="https://github.com/user-attachments/assets/932e7c7d-9df3-43b3-b560-2e43e9ea8a00" />
 
 ### WELCOME
 <p>
