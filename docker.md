@@ -8,7 +8,7 @@ sudo pacman -Syyu
 ```
 
 ## BACKUP
-<p>Before installing Docker, create a backup on Timeshift, just in case something breaks.</p>
+<p align="center">Before installing Docker, create a backup on Timeshift, just in case something breaks.</p>
 
 ## INSTALL DOCKER
 ```
