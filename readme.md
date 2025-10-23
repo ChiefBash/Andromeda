@@ -1,7 +1,7 @@
-<img width="810" height="217" src="https://github.com/user-attachments/assets/d35f2e80-8a4d-4a84-b283-f917afadddc6" />
+<p align="center"><img width="810" height="217" src="https://github.com/user-attachments/assets/d35f2e80-8a4d-4a84-b283-f917afadddc6" /></p>
 <p>This is a showcase of my current homelab setup that utilizes a multitude of services including Docker containerization and EndeavourOS (GNOME) Arch Linux as the operating system.</p>
 
-<img width="810" height="217" src="https://github.com/user-attachments/assets/32db50d3-fcf5-40cd-adac-ad7f7dea9c60" />
+<p align="center"><img width="810" height="217" src="https://github.com/user-attachments/assets/32db50d3-fcf5-40cd-adac-ad7f7dea9c60" /></p>
 
 <p>
   <img align="left" alt="Arch Linux" title="Arch Linux" width="50px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg"/>
