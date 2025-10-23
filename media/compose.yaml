@@ -1,0 +1,56 @@
+ services:
+ audiobookshelf:
+    image: advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    ports:
+      - 13378:80
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /home/chiefbash/docker/audiobookshelf/config:/config
+      - /home/chiefbash/docker/audiobookshelf/metadata:/metadata
+      - /mnt/HDD0/books/audiobooks:/audiobooks
+    restart: unless-stopped
+  kavita:
+    image: lscr.io/linuxserver/kavita:latest
+    container_name: kavita
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /home/chiefbash/docker/kavita/config:/config
+      - /mnt/HDD0/books/books:/books
+      - /mnt/HDD0/books/comics:/comics
+      - /mnt/HDD0/books/manga:/manga
+    ports:
+      - 5000:5000
+    restart: unless-stopped
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - VERSION=docker
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
+    volumes:
+      - /mnt/HDD0/plex:/config
+      - /mnt/HDD0/plex/movies:/movies
+      - /mnt/HDD0/plex/shows:/shows
+      - /mnt/HDD0/plex/videos:/videos
+      - /mnt/HDD0/plex/halloween:/halloween # Sep 30 - Nov 1
+      - /mnt/HDD0/plex/christmas:/christmas # Nov 30 - Jan 1
+    restart: unless-stopped
