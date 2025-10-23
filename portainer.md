@@ -3,7 +3,7 @@
 <p align="center"><img width="810" height="217" src="https://github.com/user-attachments/assets/e9d5cc57-f96f-444d-8550-87f223ad157d" /></p>
 
 ## BACKUP
-<p>Create a backup on TImeshift, just in case anything breaks.</p>
+<p align="center">Create a backup on TImeshift, just in case anything breaks.</p>
 
 ## CREATE PORTAINER VOLUME
 ```
@@ -16,4 +16,4 @@ sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/do
 ```
 
 ## POST-INSTALLATION
-<p>After Portainer has finished installing, open a web browser and go to https://localhost:9000 and create an administrator account.</p>
+<p align="center">After Portainer has finished installing, open a web browser and go to https://localhost:9000 and create an administrator account.</p>
