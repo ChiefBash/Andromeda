@@ -13,7 +13,6 @@ services:
       - /home/chiefbash/docker/audiobookshelf/metadata:/metadata
       - /mnt/HDD0/books/audiobooks:/audiobooks
     restart: unless-stopped
-
   kavita:
     image: lscr.io/linuxserver/kavita:latest
     container_name: kavita
@@ -28,46 +27,4 @@ services:
       - /mnt/HDD0/books/manga:/manga
     ports:
       - 5000:5000
-    restart: unless-stopped
-
-  mealie:
-    image: ghcr.io/mealie-recipes/mealie:latest
-    container_name: mealie
-    ports:
-        - "9925:9000"
-    deploy:
-      resources:
-        limits:
-          memory: 1000M
-    volumes:
-      - /home/chiefbash/docker/mealie/data:/app/data/
-    environment:
-      ALLOW_SIGNUP: "false"
-      PUID: 1000
-      PGID: 1000
-      TZ: America/Chicago
-    restart: unless-stopped
-
-  obsidian:
-    image: lscr.io/linuxserver/obsidian:latest
-    container_name: obsidian
-    security_opt:
-      - seccomp:unconfined
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [compute,video,graphics,utility]
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
-    volumes:
-      - /home/chiefbash/docker/obsidian/config:/config
-    ports:
-      - 3010:3000
-      - 3011:3001
-    shm_size: "1gb"
     restart: unless-stopped
