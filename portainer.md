@@ -1,11 +1,5 @@
 <img width="610" height="199" src="https://github.com/user-attachments/assets/fbc21779-6292-42b0-b302-6ff1dd262e9c" />
 
-<img width="810" height="217" src="https://github.com/user-attachments/assets/7dd28f03-82de-4526-9dd1-14fb62510055" />
-<p>
-</p>
-
----
-
 <img width="810" height="217" src="https://github.com/user-attachments/assets/e9d5cc57-f96f-444d-8550-87f223ad157d" />
 
 ### BACKUP
