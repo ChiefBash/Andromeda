@@ -124,3 +124,16 @@ service:
 <p>This IP address (which will be different on each intial setup) is what needs to be imported in Plex to work.</p>
 
 ## IMPORT TO PLEX
+<p>Once logged in Plex, go to the server settings.</p>
+<img width="244" height="42" src="https://github.com/user-attachments/assets/c0e27719-b575-4c91-ae48-f25ec303ec13" />
+
+<p>In the left sidebar, click 'Live TV & DVR' in the Manage section.</p>
+<img width="187" height="233" src="https://github.com/user-attachments/assets/5f6d54bc-8227-422f-be83-bb85696a6aee" />
+
+<p>Click 'Add Another Device'.</p>
+<img width="283" height="42" src="https://github.com/user-attachments/assets/7adfb6a2-0d80-4376-b290-31bd4d502916" />
+
+<p>Threadfin may show up as a device, but 99% of the time, it won't. Click 'Don't see your HDHomeRUn device? Enter its network address manually'. Enter the DVR IP address from the Threadfin Server Information section and click 'Connect'. If the DVR IP doesn't work, try adding the device IP. [https://device:34400]</p>
+<img width="588" height="245" src="https://github.com/user-attachments/assets/5e0b61e9-6047-4c69-a9c9-505acf47606a" />
+
+<p>Pick the best provider and create the DVR. This will take a long time (~ 5-10 minutes) depending on internet speed.</p>
