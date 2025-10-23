@@ -24,6 +24,7 @@ services:
       - OPENVPN_PASSWORD=password
       - SERVER_COUNTRIES=Canada
       - SERVER_CITIES=Toronto
+      - VPN_PORT_FORWARDING=on
     healthcheck:
       test: ping -c 1 www.google.com || exit 1
       interval: 60s
@@ -128,8 +129,6 @@ services:
     image: mgoerentz/threadfin:latest
     container_name: threadfin
     network_mode: service:gluetun
-    # labels:
-      # - deunhealth.restart.on.unhealthy=true
     environment:
       - PUID=1000
       - PGID=1000
@@ -137,15 +136,11 @@ services:
     volumes:
       - /home/chiefbash/docker/threadfin/config:/home/threadfin/conf
       - /home/chiefbash/docker/threadfin/tmp:/tmp/threadfin:rw
+    labels:
+      - deunhealth.restart.on.unhealthy=true
     depends_on:
-      - gluetun
-      # gluetun:
-          # condition: service_healthy
-          # restart: true
-      # healthcheck:
-        # test: ping -c 1 www.google.com || exit 1
-        # interval: 60s
-        # retries: 3
-        # start_period: 20s
-        # timeout: 10s
+      gluetun:
+        condition: service_healthy
+        restart: true
     restart: unless-stopped
+
