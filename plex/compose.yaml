@@ -22,8 +22,8 @@
       - /mnt/HDD0/plex/movies:/movies
       - /mnt/HDD0/plex/shows:/shows
       - /mnt/HDD0/plex/videos:/videos
-      # - /mnt/HDD0/plex/halloween:/halloween
-      #- /mnt/HDD0/plex/christmas:/christmas
+      - /mnt/HDD0/plex/halloween:/halloween # Sep 30 - Nov 1
+      - /mnt/HDD0/plex/christmas:/christmas # Nov 30 - Jan 1
     restart: unless-stopped
   tautulli:
     image: lscr.io/linuxserver/tautulli:latest
