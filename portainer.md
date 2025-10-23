@@ -1,13 +1,12 @@
 <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/6b4ac327-68ab-42bc-9292-75552fd5b6c6" />
 
-
 ### WHY?
 <p>
 </p>
 
 ---
 
-## INSTALLATION
+<img width="1619" height="434" alt="Installation" src="https://github.com/user-attachments/assets/e9d5cc57-f96f-444d-8550-87f223ad157d" />
 
 ### BACKUP
 <p>
