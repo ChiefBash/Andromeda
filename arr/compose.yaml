@@ -11,7 +11,6 @@ services:
     ports:
       - 7575:7575
     restart: unless-stopped
-
   bazarr:
     image: lscr.io/linuxserver/bazarr:latest
     container_name: bazarr
@@ -26,7 +25,6 @@ services:
     ports:
       - 6767:6767
     restart: unless-stopped
-
   lidarr:
     image: lscr.io/linuxserver/lidarr:latest
     container_name: lidarr
@@ -41,7 +39,6 @@ services:
     ports:
       - 8686:8686
     restart: unless-stopped
-
   overseerr:
     image: lscr.io/linuxserver/overseerr:latest
     container_name: overseerr
@@ -54,7 +51,6 @@ services:
     ports:
       - 5055:5055
     restart: unless-stopped
-
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
@@ -69,7 +65,6 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
-
   readarr:
     image: lscr.io/linuxserver/readarr:0.4.19-nightly
     container_name: readarr
@@ -84,7 +79,6 @@ services:
     ports:
       - 8787:8787
     restart: unless-stopped
-
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
