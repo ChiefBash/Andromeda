@@ -8,7 +8,6 @@ services:
       - /home/chiefbash/docker/filebot/config:/config:rw
       - /mnt/HDD0/plex:/storage:rw
     restart: unless-stopped
-
   handbrake:
     image: jlesage/handbrake:latest
     container_name: handbrake
@@ -21,7 +20,6 @@ services:
       - /mnt/HDD15/handbrake/complete:/output:rw
       - /mnt/HDD15/handbrake/trash:/trash:rw
     restart: unless-stopped
-
   makemkv:
     image: jlesage/makemkv:latest
     container_name: makemkv
@@ -35,7 +33,6 @@ services:
       - /dev/sr0:/dev/sr0
       - /dev/sg2:/dev/sg2
     restart: unless-stopped
-
   mkvtoolnix:
     image: jlesage/mkvtoolnix:latest
     container_name: mkvtoolnix
