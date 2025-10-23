@@ -8,8 +8,8 @@ services:
       - TZ=America/Chicago
     volumes:
       - /mnt:/srv
-      - /home/chiefbash/docker/filebrowser/filebrowser.db:/filebrowser.db # "touch filebrowser.db" in /home/chiefbash/docker/filebrowser
-      - /home/chiefbash/docker/filebrowser/settings.json:/settings.json # "touch settings.json" in /home/chiefbash/docker/filebrowser
+      - /home/chiefbash/docker/filebrowser/filebrowser.db:/filebrowser.db # 'touch filebrowser.db' in /home/chiefbash/docker/filebrowser
+      - /home/chiefbash/docker/filebrowser/settings.json:/settings.json # 'touch settings.json' in /home/chiefbash/docker/filebrowser
     ports:
       - 8095:80
     restart: unless-stopped
@@ -59,6 +59,18 @@ services:
       - 22000:22000/udp
       - 21027:21027/udp
     restart: unless-stopped  
+  tautulli:
+    image: lscr.io/linuxserver/tautulli:latest
+    container_name: tautulli
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /home/chiefbash/docker/tautulli/config:/config
+    ports:
+      - 8181:8181
+    restart: unless-stopped
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
