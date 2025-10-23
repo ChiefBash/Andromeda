@@ -1,6 +1,6 @@
-<img width="610" height="199" src="https://github.com/user-attachments/assets/fbc21779-6292-42b0-b302-6ff1dd262e9c" />
+<p align="center"><img width="610" height="199" src="https://github.com/user-attachments/assets/fbc21779-6292-42b0-b302-6ff1dd262e9c" /></p>
 
-<img width="810" height="217" src="https://github.com/user-attachments/assets/e9d5cc57-f96f-444d-8550-87f223ad157d" />
+<p align="center"><img width="810" height="217" src="https://github.com/user-attachments/assets/e9d5cc57-f96f-444d-8550-87f223ad157d" /></p>
 
 ## BACKUP
 <p>Create a backup on TImeshift, just in case anything breaks.</p>
