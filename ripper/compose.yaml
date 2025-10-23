@@ -31,7 +31,7 @@ services:
       - /mnt/HDD15/makemkv/encode:/output:rw
     devices:
       - /dev/sr0:/dev/sr0
-      - /dev/sg2:/dev/sg2
+      - /dev/sg2:/dev/sg2 # "sudo modprobe sg" after every restart
     restart: unless-stopped
   mkvtoolnix:
     image: jlesage/mkvtoolnix:latest
