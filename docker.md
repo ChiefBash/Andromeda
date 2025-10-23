@@ -1,6 +1,6 @@
-<img width="336" height="287" alt="image" src="https://github.com/user-attachments/assets/469d28d2-1990-46b0-bbd6-584572ef4c90" />
+<p align="center"><img width="336" height="287" alt="image" src="https://github.com/user-attachments/assets/469d28d2-1990-46b0-bbd6-584572ef4c90" /></p>
 
-<img width="810" height="217" alt="Installation" src="https://github.com/user-attachments/assets/de7e8748-7d84-4780-b8d4-fe67adfac77d" />
+<p align="center"><img width="810" height="217" alt="Installation" src="https://github.com/user-attachments/assets/de7e8748-7d84-4780-b8d4-fe67adfac77d" /></p>
 
 ## UPDATE ENDEAVOUROS
 ```
