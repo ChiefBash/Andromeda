@@ -1,34 +1,21 @@
 <img width="336" height="287" alt="image" src="https://github.com/user-attachments/assets/469d28d2-1990-46b0-bbd6-584572ef4c90" />
 
-<img width="810" height="217" alt="Why" src="https://github.com/user-attachments/assets/838dde71-b798-49a1-8885-0963170092cf" />
-<p>
-
-</p>
-
----
-
 <img width="810" height="217" alt="Installation" src="https://github.com/user-attachments/assets/de7e8748-7d84-4780-b8d4-fe67adfac77d" />
 
 ### UPDATE ENDEAVOUROS
-
 ```
 sudo pacman -Syyu
 ```
 
-### BACKUP
+## BACKUP
+<p>Before installing Docker, create a backup on Timeshift, just in case something breaks.</p>
 
-<p>
-Before installing Docker, create a backup on Timeshift, just in case something breaks.
-</p>
-
-### INSTALL DOCKER
-
+## INSTALL DOCKER
 ```
 sudo pacman -Syu docker
 ```
 
-### START & ENABLE DOCKER
-
+## START & ENABLE DOCKER
 ```
 sudo systemctl start docker
 ```
@@ -36,14 +23,12 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-### START & ENABLE DOCKER
-
+## START & ENABLE DOCKE
 ```
 sudo usermod -aG docker chiefbash
 ```
 
-### INSTALL DOCKER COMPOSE
-
+## INSTALL DOCKER COMPOSE
 ```
 sudo pacman -Syu docker-compose
 ```
