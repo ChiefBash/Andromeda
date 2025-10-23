@@ -42,4 +42,3 @@ services:
       - /home/chiefbash/docker/mkvtoolnix/config:/config:rw
       - /mnt/HDD15/makemkv/encode:/storage:rw
     restart: unless-stopped
-
