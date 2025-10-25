@@ -88,7 +88,8 @@ service:
 <p align="center"><img width="246" height="61" src="https://github.com/user-attachments/assets/c92ba9ac-4b01-4227-b0d9-022a605521f8" /></p>
 
 ## SETTINGS
-<p align="center"><b>Automatic uppdate of Threadin</b>: ✅ (Watchtower will also update the Docker container if necessary)</p>
+<p align="center">If a setting is not specified here, leave at the <b>default</b> setting.</p>
+<p align="center"><b>Automatic update of Threadfin</b>: ✅</p>
 <p align="center"><b>SSDP</b>: ✅</p>
 <p align="center"><b>Number of Tuners</b>: 2 (Equal to the amount concurrent live streams. It will be different depending on the provider.)</p>
 <p align="center"><b>EPG Source</b>: XEPG</p>
