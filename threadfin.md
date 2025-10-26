@@ -121,7 +121,7 @@ service:
 
 <p align="center">Look for 'DVR IP'.</p>
 <p align="center"><img width="233" height="68" src="https://github.com/user-attachments/assets/56d151a1-94c8-42f1-89f3-11983dcbbe1b" /></p>
-<p align="center">This IP address (which will be different on each intial setup) is what needs to be imported in Plex to work.</p>
+<p align="center">This IP address (which will be different on each initial setup) is what needs to be imported in Plex to work.</p>
 
 ## IMPORT TO PLEX
 <p align="center">Once logged in Plex, go to the server settings.</p>
