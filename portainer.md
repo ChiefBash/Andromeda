@@ -3,7 +3,7 @@
 <p align="center"><img width="810" height="217" src="https://github.com/user-attachments/assets/e9d5cc57-f96f-444d-8550-87f223ad157d" /></p>
 
 ## BACKUP
-<p align="center">Create a backup on TImeshift, just in case anything breaks.</p>
+<p align="center">Create a backup on Timeshift, just in case anything breaks.</p>
 
 ## CREATE PORTAINER VOLUME
 ```
