@@ -1,4 +1,4 @@
- services:
+services:
  audiobookshelf:
     image: advplyr/audiobookshelf:latest
     container_name: audiobookshelf
@@ -53,4 +53,5 @@
       - /mnt/HDD0/plex/videos:/videos
       - /mnt/HDD0/plex/halloween:/halloween # Sep 30 - Nov 1
       - /mnt/HDD0/plex/christmas:/christmas # Nov 30 - Jan 1
+
     restart: unless-stopped
