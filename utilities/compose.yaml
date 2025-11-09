@@ -34,13 +34,6 @@ services:
     ports:
       - 8085:80
     restart: unless-stopped
-  speedtest:
-    image: openspeedtest/latest
-    container_name: speedtest
-    ports:
-      - 3020:3000
-      - 3021:3001
-    restart: unless-stopped
   syncthing:
     image: lscr.io/linuxserver/syncthing:latest
     container_name: syncthing
