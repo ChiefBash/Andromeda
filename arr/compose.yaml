@@ -20,8 +20,8 @@ services:
       - TZ=America/Chicago
     volumes:
       - /home/chiefbash/docker/bazarr/config:/config
-      - /mnt/HDD0/plex/movies:/movies
-      - /mnt/HDD0/plex/shows:/shows
+      - /mnt/HDD15/plex/movies:/movies
+      - /mnt/HDD15/plex/shows:/shows
     ports:
       - 6767:6767
     restart: unless-stopped
@@ -34,7 +34,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - /home/chiefbash/docker/lidarr/config:/config
-      - /mnt/HDD0/music:/music
+      - /mnt/HDD15/music:/music
       - /mnt/HDD16/downloads:/downloads
     ports:
       - 8686:8686
@@ -60,7 +60,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - /home/chiefbash/docker/radarr/config:/config
-      - /mnt/HDD0/plex/movies:/movies
+      - /mnt/HDD15/plex/movies:/movies
       - /mnt/HDD16/downloads:/downloads
     ports:
       - 7878:7878
@@ -74,7 +74,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - /home/chiefbash/docker/readarr/config:/config
-      - /mnt/HDD0/books/:/books
+      - /mnt/HDD15/books/:/books
       - /mnt/HDD16/downloads:/downloads
     ports:
       - 8787:8787
@@ -88,8 +88,9 @@ services:
       - TZ=America/Chicago
     volumes:
       - /home/chiefbash/docker/sonarr/config:/config
-      - /mnt/HDD0/plex/shows:/shows
+      - /mnt/HDD15/plex/shows:/shows
       - /mnt/HDD16/downloads:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
+
