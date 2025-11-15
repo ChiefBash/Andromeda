@@ -51,6 +51,4 @@ services:
         - /mnt/HDD15/plex/movies:/movies
         - /mnt/HDD15/plex/shows:/shows
         - /mnt/HDD15/plex/videos:/videos
-        - /mnt/HDD15/plex/halloween:/halloween # Sep 30 - Nov 1
-        - /mnt/HDD15/plex/christmas:/christmas # Nov 30 - Jan 1
       restart: unless-stopped
