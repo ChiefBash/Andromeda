@@ -9,7 +9,7 @@ services:
       - /mnt/HDD0/plex:/storage:rw
     restart: unless-stopped
   handbrake:
-    image: jlesage/handbrake:latest
+    image: zocker160/handbrake-nvenc:latest
     container_name: handbrake
     ports:
       - 5810:5810
@@ -19,6 +19,12 @@ services:
       - /mnt/HDD15/handbrake/watch:/watch:rw
       - /mnt/HDD15/handbrake/complete:/output:rw
       - /mnt/HDD15/handbrake/trash:/trash:rw
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - count: all
+              capabilities: [gpu]
     restart: unless-stopped
   makemkv:
     image: jlesage/makemkv:latest
@@ -31,7 +37,7 @@ services:
       - /mnt/HDD15/makemkv/encode:/output:rw
     devices:
       - /dev/sr0:/dev/sr0
-      - /dev/sg2:/dev/sg2 # 'sudo modprobe sg' after every restart
+      - /dev/sg2:/dev/sg2 # 'sudo modprobe sg' after every update/restart
     restart: unless-stopped
   mkvtoolnix:
     image: jlesage/mkvtoolnix:latest
