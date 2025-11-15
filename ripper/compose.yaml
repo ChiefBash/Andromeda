@@ -6,7 +6,7 @@ services:
       - 5800:5800
     volumes:
       - /home/chiefbash/docker/filebot/config:/config:rw
-      - /mnt/HDD0/plex:/storage:rw
+      - /mnt/HDD15/plex:/storage:rw
     restart: unless-stopped
   handbrake:
     image: zocker160/handbrake-nvenc:latest
