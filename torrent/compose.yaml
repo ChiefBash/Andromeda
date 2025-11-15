@@ -125,4 +125,3 @@ services:
     depends_on:
       - gluetun
     restart: unless-stopped
-
