@@ -20,8 +20,8 @@ services:
       - TZ=America/Chicago
       - VPN_SERVICE_PROVIDER=expressvpn
       - VPN_TYPE=openvpn
-      - OPENVPN_USER=ar7tbo1giqn7ckbqf8u1c8ek
-      - OPENVPN_PASSWORD=kzol7ysge8cjqozs4ny61cmh
+      - OPENVPN_USER= # username
+      - OPENVPN_PASSWORD= #password
       - SERVER_COUNTRIES=USA
       - SERVER_CITIES=Chicago
     healthcheck:
@@ -125,3 +125,4 @@ services:
     depends_on:
       - gluetun
     restart: unless-stopped
+
