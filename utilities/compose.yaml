@@ -1,18 +1,4 @@
 services:
-  filebrowser:
-    image: filebrowser/filebrowser:latest
-    container_name: filebrowser
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
-    volumes:
-      - /mnt:/srv
-      - /home/chiefbash/docker/filebrowser/filebrowser.db:/filebrowser.db # 'touch filebrowser.db' in /home/chiefbash/docker/filebrowser
-      - /home/chiefbash/docker/filebrowser/settings.json:/settings.json # 'touch settings.json' in /home/chiefbash/docker/filebrowser
-    ports:
-      - 8095:80
-    restart: unless-stopped
   filezilla:
     image: jlesage/filezilla:latest
     container_name: filezilla
@@ -71,3 +57,4 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
+
