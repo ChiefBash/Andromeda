@@ -16,6 +16,7 @@ services:
       - 34400:34400 # threadfin
     volumes:
       - /home/chiefbash/docker/gluetun:/gluetun
+      - ./my_expressvpn_usa_-_chicago_udp.ovpn:/gluetun/custom.conf:ro # .ovpn file
     environment:
       - TZ=America/Chicago
       - VPN_SERVICE_PROVIDER=expressvpn
