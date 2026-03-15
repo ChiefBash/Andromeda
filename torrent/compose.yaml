@@ -20,6 +20,7 @@ services:
       - TZ=America/Chicago
       - VPN_SERVICE_PROVIDER=expressvpn
       - VPN_TYPE=openvpn
+      - OPENVPN_CUSTOM_CONFIG=/gluetun/custom.conf
       - OPENVPN_USER=${OPENVPN_USER} # username
       - OPENVPN_PASSWORD=${OPENVPN_PASSWORD} # password
     healthcheck:
