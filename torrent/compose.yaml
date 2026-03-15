@@ -22,8 +22,6 @@ services:
       - VPN_TYPE=openvpn
       - OPENVPN_USER= # username
       - OPENVPN_PASSWORD= #password
-      - SERVER_COUNTRIES=USA
-      - SERVER_CITIES=Chicago
     healthcheck:
       test: ping -c 1 www.google.com || exit 1
       interval: 60s
