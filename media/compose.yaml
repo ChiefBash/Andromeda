@@ -7,29 +7,27 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     ports:
-      - 3000:3000 # firefox webui
-      - 3001:3001 # firefox webui https
-      - 6881:6881 # qbittorrent torrent
-      - 6881:6881/udp # qbittorrent torrent udp
-      - 8585:8585 # qbittorrent webui
-      - 9696:9696 # prowlarr
-      - 34400:34400 # threadfin
+      - 3000:3000 #firefox webui
+      - 3001:3001 #firefox webui https
+      - 6881:6881 #qbittorrent torrent
+      - 6881:6881/udp #qbittorrent torrent udp
+      - 8585:8585 #qbittorrent webui
+      - 9696:9696 #prowlarr
+      - 34400:34400 #threadfin
     volumes:
-      - /home/chiefbash/docker/gluetun:/gluetun
-      - /home/chiefbash/docker/gluetun/my_expressvpn_usa_-_chicago_udp.ovpn:/gluetun/custom.conf:ro # .ovpn file
+      - ./gluetun:/gluetun
     environment:
-      - TZ=America/Chicago
       - VPN_SERVICE_PROVIDER=expressvpn
       - VPN_TYPE=openvpn
-      - OPENVPN_CUSTOM_CONFIG=/gluetun/custom.conf
-      - OPENVPN_USER=${OPENVPN_USER} # username
-      - OPENVPN_PASSWORD=${OPENVPN_PASSWORD} # password
+      - OPENVPN_USER=${OPENVPN_USER} #username
+      - OPENVPN_PASSWORD=${OPENVPN_PASSWORD} #password
     healthcheck:
       test: ping -c 1 www.google.com || exit 1
       interval: 60s
       timeout: 20s
       retries: 5
     restart: unless-stopped
+  
   deunhealth:
     image: qmcgaw/deunhealth
     container_name: deunhealth
@@ -37,10 +35,11 @@ services:
     environment:
       - LOG_LEVEL=info
       - HEALTH_SERVER_ADDRESS=127.0.0.1:9999
-      - TZ=America/Chicago
+      - TZ=${TZ}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
+  
   firefox:
     image: lscr.io/linuxserver/firefox:latest
     container_name: firefox
@@ -55,25 +54,26 @@ services:
               count: 1
               capabilities: [compute,video,graphics,utility]
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
-      - /home/chiefbash/docker/firefox/config:/config
+      - ./firefox:/config
     shm_size: "1gb"
     depends_on:
       - gluetun
     restart: unless-stopped
+  
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
     network_mode: service:gluetun
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
-      - /home/chiefbash/docker/prowlarr/config:/config
+      - ./prowlarr:/config
     depends_on:
       gluetun:
         condition: service_healthy
@@ -85,6 +85,7 @@ services:
       start_period: 20s
       timeout: 10s
     restart: unless-stopped
+  
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
@@ -92,14 +93,14 @@ services:
     labels:
       - deunhealth.restart.on.unhealthy=true
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
       - WEBUI_PORT=8585
       - TORRENTING_PORT=6881
     volumes:
-      - /home/chiefbash/docker/qbittorrent/config:/config
-      - /mnt/HDD16/downloads:/downloads
+      - ./qbittorrent:/config
+      - /mnt/HDD5/downloads:/downloads
     depends_on:
       gluetun:
         condition: service_healthy
@@ -111,17 +112,18 @@ services:
       start_period: 20s
       timeout: 10s
     restart: unless-stopped
+  
   threadfin:
     image: mgoerentz/threadfin:latest
     container_name: threadfin
     network_mode: service:gluetun
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=${PUID}
+      - PGID=${PGID}
       - THREADFIN_PORT=34400
     volumes:
-      - /home/chiefbash/docker/threadfin/config:/home/threadfin/conf
-      - /home/chiefbash/docker/threadfin/tmp:/tmp/threadfin:rw
+      - ./threadfin/conf:/home/threadfin/conf
+      - ./threadfin/tmp:/tmp/threadfin:rw
     depends_on:
       - gluetun
     restart: unless-stopped
