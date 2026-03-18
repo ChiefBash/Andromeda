@@ -16,6 +16,8 @@ services:
       - 34400:34400 #threadfin
     volumes:
       - ./gluetun:/gluetun
+    env_file:
+      - .env
     environment:
       - VPN_SERVICE_PROVIDER=expressvpn
       - VPN_TYPE=openvpn
