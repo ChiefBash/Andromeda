@@ -7,10 +7,10 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /home/chiefbash/docker/kavita/config:/config
-      - /mnt/HDD15/books/books:/books
-      - /mnt/HDD15/books/comics:/comics
-      - /mnt/HDD15/books/manga:/manga
+      - /docker/kavita/config:/config
+      - /mnt/HDD1/books/books:/books
+      - /mnt/HDD1/books/comics:/comics
+      - /mnt/HDD1/books/manga:/manga
     ports:
       - 5000:5000
     restart: unless-stopped
