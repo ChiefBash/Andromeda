@@ -9,7 +9,7 @@ services:
         - PGID=1000
         - TZ=America/Chicago
       volumes:
-        - /home/chiefbash/docker/audiobookshelf/config:/config
-        - /home/chiefbash/docker/audiobookshelf/metadata:/metadata
-        - /mnt/HDD15/books/audiobooks:/audiobooks
+        - /docker/audiobookshelf:/config
+        - /docker/audiobookshelf/metadata:/metadata
+        - /mnt/HDD1/books/audiobooks:/audiobooks
       restart: unless-stopped
