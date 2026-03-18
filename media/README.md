@@ -1,0 +1,3 @@
+media
+├── books
+├── jellyfin
