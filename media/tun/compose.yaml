@@ -15,7 +15,7 @@ services:
       - 9696:9696 #prowlarr
       - 34400:34400 #threadfin
     volumes:
-      - /docker/gluetun:/gluetun
+      - home/chiefbash/docker/gluetun:/gluetun
     env_file:
       - .env
     healthcheck:
