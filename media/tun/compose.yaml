@@ -10,7 +10,6 @@ services:
       - 3000:3000 #firefox
       - 3001:3001 #firefox https
       - 6881:6881 #qbittorrent torrent
-      - 6881:6881/udp #qbittorrent torrent udp
       - 8191:8191 #flaresolverr
       - 8585:8585 #qbittorrent webui
       - 9696:9696 #prowlarr
@@ -112,7 +111,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - WEBUI_PORT=8585
-      - TORRENTING_PORT=6881
+      - TORRENTING_PORT=${FIREWALL_VPN_INPUT_PORTS}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/qbittorrent:/config
