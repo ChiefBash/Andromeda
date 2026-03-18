@@ -13,3 +13,19 @@ services:
       - /docker/audiobookshelf/metadata:/metadata
       - /mnt/HDD1/books/audiobooks:/audiobooks
     restart: unless-stopped
+
+  kavita:
+    image: lscr.io/linuxserver/kavita:latest
+    container_name: kavita
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/kavita:/config
+      - /mnt/HDD1/books/books:/books
+      - /mnt/HDD1/books/comics:/comics
+      - /mnt/HDD1/books/manga:/manga
+    ports:
+      - 5000:5000
+    restart: unless-stopped
