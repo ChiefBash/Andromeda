@@ -4,7 +4,7 @@
 
 ## UPDATE ENDEAVOUROS
 ```
-sudo pacman -Syyu
+sudo apt update && sudo apt upgrade -y
 ```
 
 ## BACKUP
@@ -12,7 +12,7 @@ sudo pacman -Syyu
 
 ## INSTALL DOCKER
 ```
-sudo pacman -Syu docker
+sudo apt install docker -y
 ```
 
 ## START & ENABLE DOCKER
@@ -30,5 +30,5 @@ sudo usermod -aG docker chiefbash
 
 ## INSTALL DOCKER COMPOSE
 ```
-sudo pacman -Syu docker-compose
+sudo apt install docker-compose -y
 ```
