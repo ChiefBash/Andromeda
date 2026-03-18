@@ -15,9 +15,16 @@ services:
       - 9696:9696 #prowlarr
       - 34400:34400 #threadfin
     volumes:
-      - home/chiefbash/docker/gluetun:/gluetun
-    env_file:
-      - .env
+      - home/chiefbash/docker/tun/gluetun:/gluetun
+    environment:
+      - VPN_SERVICE_PROVIDER=airvpn
+      - VPN_TYPE=wiregaurd
+      - FIREWALL_VPN_INPUT_PORTS=port
+      - WIREGUARD_PRIVATE_KEY=key
+      - WIREGUARD_PRESHARED_KEY=key
+      - WIREGUARD_ADDRESSES=ip
+      - SERVER_COUNTRIES=country
+      - SREVER_CITIES=cities
     healthcheck:
       test: ping -c 1 www.google.com || exit 1
       interval: 60s
@@ -55,8 +62,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/firefox:/config
+      - /home/chiefbash/docker/tun/firefox:/config
     shm_size: "1gb"
     depends_on:
       - gluetun
@@ -86,8 +92,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/prowlarr:/config
+      - /home/chiefbash/docker/tun/prowlarr:/config
     depends_on:
       gluetun:
         condition: service_healthy
@@ -113,9 +118,8 @@ services:
       - WEBUI_PORT=8585
       - TORRENTING_PORT=${FIREWALL_VPN_INPUT_PORTS}
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/qbittorrent:/config
-      - /mnt/HDD5/downloads:/downloads
+      - /home/chiefbash/docker/tun/qbittorrent/config:/config
+      - /mnt/HDD16/downloads:/downloads
     depends_on:
       gluetun:
         condition: service_healthy
@@ -137,9 +141,8 @@ services:
       - PGID=${PGID}
       - THREADFIN_PORT=34400
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/threadfin/conf:/home/threadfin/conf
-      - /docker/threadfin/tmp:/tmp/threadfin:rw
+      - /home/chiefbash/docker/tun/threadfin/conf:/home/threadfin/conf
+      - /home/chiefbash/docker/tun/threadfin/tmp:/tmp/threadfin:rw
     depends_on:
       - gluetun
     restart: unless-stopped
