@@ -20,7 +20,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /home/chiefbash/docker/bazarr/config:/config
+      - /docker/bazarr:/config
       - /mnt/HDD1/plex/movies:/movies
       - /mnt/HDD1/plex/shows:/shows
     ports:
@@ -35,7 +35,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /home/chiefbash/docker/lidarr/config:/config
+      - /docker/lidarr:/config
       - /mnt/HDD1/music:/music
       - /mnt/HDD5/downloads:/downloads
     ports:
@@ -50,7 +50,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /home/chiefbash/docker/radarr/config:/config
+      - /docker/radarr:/config
       - /mnt/HDD1/plex/movies:/movies
       - /mnt/HDD5/downloads:/downloads
     ports:
