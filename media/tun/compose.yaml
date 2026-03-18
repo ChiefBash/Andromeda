@@ -56,6 +56,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /docker/firefox:/config
     shm_size: "1gb"
     depends_on:
@@ -86,6 +87,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /docker/prowlarr:/config
     depends_on:
       gluetun:
@@ -112,6 +114,7 @@ services:
       - WEBUI_PORT=8585
       - TORRENTING_PORT=6881
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /docker/qbittorrent:/config
       - /mnt/HDD5/downloads:/downloads
     depends_on:
@@ -135,6 +138,7 @@ services:
       - PGID=${PGID}
       - THREADFIN_PORT=34400
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - /docker/threadfin/conf:/home/threadfin/conf
       - /docker/threadfin/tmp:/tmp/threadfin:rw
     depends_on:
