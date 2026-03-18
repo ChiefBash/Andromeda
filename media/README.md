@@ -1,19 +1,27 @@
 ```
-data
-├── books
-├── downloads
-│   ├── qbittorrent
-│   │   ├── completed
-│   │   ├── incomplete
-│   │   └── torrents
-│   └── nzbget
-│       ├── completed
-│       ├── intermediate
-│       ├── nzb
-│       ├── queue
-│       └── tmp
-├── movies
-├── music
-├── shows
-└── youtube
+home
+├── chiefbash
+│   └── docker
+│        ├── arr
+│        ├── media
+             ├── books
+                 └── compose.yaml
+             ├── jellyfin
+                 └── compose.yaml
+│        ├── tun
+             ├── .env
+             └── compose.yaml
+│        ├── ripper
+│            ├── filebot
+│            ├── handbrake
+│            ├── makemkv
+│            └── mkvtoolnix
+│        └── utilities
+             └── watchtower
+│        
+```
+
+```
+mnt
+
 ```
