@@ -7,15 +7,16 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     ports:
-      - 3000:3000 #firefox webui
-      - 3001:3001 #firefox webui https
+      - 3000:3000 #firefox
+      - 3001:3001 #firefox https
       - 6881:6881 #qbittorrent torrent
       - 6881:6881/udp #qbittorrent torrent udp
+      - 8191:8191 #flaresolverr
       - 8585:8585 #qbittorrent webui
       - 9696:9696 #prowlarr
       - 34400:34400 #threadfin
     volumes:
-      - ./gluetun:/gluetun
+      - /docker/gluetun:/gluetun
     env_file:
       - .env
     healthcheck:
@@ -55,10 +56,25 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ./firefox:/config
+      - /docker/firefox:/config
     shm_size: "1gb"
     depends_on:
       - gluetun
+    restart: unless-stopped
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    network_mode: service:gluetun
+    environment:
+      - LOG_LEVEL=info
+      - LOG_HTML=false
+      - CAPTCHA_SOLVER=none
+      - TZ=${TZ}
+    depends_on:
+      gluetun:
+        condition: service_healthy
+        restart: true
     restart: unless-stopped
   
   prowlarr:
@@ -70,7 +86,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ./prowlarr:/config
+      - /docker/prowlarr:/config
     depends_on:
       gluetun:
         condition: service_healthy
@@ -96,7 +112,7 @@ services:
       - WEBUI_PORT=8585
       - TORRENTING_PORT=6881
     volumes:
-      - ./qbittorrent:/config
+      - /docker/qbittorrent:/config
       - /mnt/HDD5/downloads:/downloads
     depends_on:
       gluetun:
@@ -119,8 +135,8 @@ services:
       - PGID=${PGID}
       - THREADFIN_PORT=34400
     volumes:
-      - ./threadfin/conf:/home/threadfin/conf
-      - ./threadfin/tmp:/tmp/threadfin:rw
+      - /docker/threadfin/conf:/home/threadfin/conf
+      - /docker/threadfin/tmp:/tmp/threadfin:rw
     depends_on:
       - gluetun
     restart: unless-stopped
