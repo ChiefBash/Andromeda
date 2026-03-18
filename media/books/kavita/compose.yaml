@@ -7,7 +7,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/kavita/config:/config
+      - /docker/kavita:/config
       - /mnt/HDD1/books/books:/books
       - /mnt/HDD1/books/comics:/comics
       - /mnt/HDD1/books/manga:/manga
