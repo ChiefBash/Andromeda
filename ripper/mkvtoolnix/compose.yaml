@@ -1,1 +1,10 @@
-
+services:
+  mkvtoolnix:
+    image: jlesage/mkvtoolnix:latest
+    container_name: mkvtoolnix
+    ports:
+      - 5830:5830
+    volumes:
+      - /docker/mkvtoolnix:/config:rw
+      - /mnt/HDD1/makemkv/encode:/storage:rw
+    restart: unless-stopped
