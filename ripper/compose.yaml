@@ -22,4 +22,16 @@ services:
       - /mnt/HDD1/handbrake/trash:/trash:rw
     restart: unless-stopped
 
-  
+  makemkv:
+    image: jlesage/makemkv:latest
+    container_name: makemkv
+    ports:
+      - 5820:5820
+    volumes:
+      - ./makemkv/config:/config:rw
+      - /mnt/HDD1:/storage:ro
+      - /mnt/HDD1/makemkv:/output:rw
+    devices:
+      - /dev/sr0:/dev/sr0
+      - /dev/sg2:/dev/sg2 #may need to do the following command after every update/restart: sudo modprobe sg
+    restart: unless-stopped
