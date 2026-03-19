@@ -9,8 +9,8 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/audiobookshelf:/config
-      - /docker/audiobookshelf/metadata:/metadata
+      - ./audiobookshelf:/config
+      - ./audiobookshelf/metadata:/metadata
       - /mnt/HDD1/books/audiobooks:/audiobooks
     restart: unless-stopped
 
@@ -22,7 +22,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/kavita:/config
+      - ./kavita:/config
       - /mnt/HDD1/books/books:/books
       - /mnt/HDD1/books/comics:/comics
       - /mnt/HDD1/books/manga:/manga
