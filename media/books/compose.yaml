@@ -11,7 +11,7 @@ services:
     volumes:
       - ./audiobookshelf:/config
       - ./audiobookshelf/metadata:/metadata
-      - /mnt/HDD1/books/audiobooks:/audiobooks
+      - /mnt/HDD1/media/books/audiobooks:/audiobooks
     restart: unless-stopped
 
   kavita:
@@ -23,9 +23,9 @@ services:
       - TZ=America/Chicago
     volumes:
       - ./kavita:/config
-      - /mnt/HDD1/books/books:/books
-      - /mnt/HDD1/books/comics:/comics
-      - /mnt/HDD1/books/manga:/manga
+      - /mnt/HDD1/media/books/books:/books
+      - /mnt/HDD1//media/books/comics:/comics
+      - /mnt/HDD1/media/books/manga:/manga
     ports:
       - 5000:5000
     restart: unless-stopped
