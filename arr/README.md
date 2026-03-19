@@ -3,6 +3,22 @@
 
 # Homarr
 
+```
+services:
+  homarr:
+    image: ghcr.io/ajnart/homarr:latest
+    container_name: homarr
+    environment:
+      - TZ=America/Chicago
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./homarr:/config
+      - ./homarr/data:/data
+    ports:
+      - 7575:7575
+    restart: unless-stopped
+```
+
 ---
 
 <p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/12da5755-4d09-4210-bd36-cdb945eff196" /></p>
