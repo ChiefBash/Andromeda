@@ -2,6 +2,13 @@ services:
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+                count: 1
+                  capabilities: [gpu]
     environment:
       - PUID=1000
       - PGID=1000
