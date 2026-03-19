@@ -17,6 +17,13 @@
 
 ---
 
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/5c6e2d93-ece0-4412-ac75-f872ccaa26f4" />
+</p>
+
+# Readarr
+
+---
+
 <p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/1d3a5fdc-8b61-449d-8573-428a69c20fa1" />
 </p>
 
