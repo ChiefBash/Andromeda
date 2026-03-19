@@ -35,3 +35,13 @@ services:
       - /dev/sr0:/dev/sr0
       - /dev/sg2:/dev/sg2 #may need to do the following command after every update/restart: sudo modprobe sg
     restart: unless-stopped
+
+  mkvtoolnix:
+    image: jlesage/mkvtoolnix:latest
+    container_name: mkvtoolnix
+    ports:
+      - 5830:5830
+    volumes:
+      - ./mkvtoolnix:/config:rw
+      - /mnt/HDD1/makemkv:/storage:rw
+    restart: unless-stopped
