@@ -8,3 +8,18 @@ services:
       - ./filebot/:/config:rw
       - /mnt/HDD1/media:/storage:rw
     restart: unless-stopped
+
+  handbrake:
+    image: jlesage/handbrake:latest
+    container_name: handbrake
+    ports:
+      - 5810:5810
+    volumes:
+      - ./handbrake:/config:rw
+      - /mnt/HDD1:/storage:ro
+      - /mnt/HDD1/handbrake/watch:/watch:rw
+      - /mnt/HDD1/handbrake/complete:/output:rw
+      - /mnt/HDD1/handbrake/trash:/trash:rw
+    restart: unless-stopped
+
+  
