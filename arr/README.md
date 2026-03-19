@@ -1,3 +1,10 @@
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/6a1a6800-a31a-4e27-bb6a-f058e8a2e782" />
+</p>
+
+# Homarr
+
+---
+
 <p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/12da5755-4d09-4210-bd36-cdb945eff196" /></p>
 
 # Bazarr
