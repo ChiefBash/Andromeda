@@ -1,27 +1,11 @@
+<h1>Directory Map</h1>
+
 ```
-home
-├── chiefbash
-│   └── docker
-│        ├── arr
-│        ├── media
-             ├── books
-                 └── compose.yaml
-             ├── jellyfin
-                 └── compose.yaml
-│        ├── tun
-             ├── .env
-             └── compose.yaml
-│        ├── ripper
-│            ├── filebot
-│            ├── handbrake
-│            ├── makemkv
-│            └── mkvtoolnix
-│        └── utilities
-             └── watchtower
-│        
+Docker map here
 ```
 
 ```
-mnt
-
+Media drive here
 ```
+
+<h1>Hardware Acceleration</h1>
