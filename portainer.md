@@ -1,19 +1,17 @@
 <p align="center"><img width="610" height="199" src="https://github.com/user-attachments/assets/fbc21779-6292-42b0-b302-6ff1dd262e9c" /></p>
 
-<p align="center"><img width="810" height="217" src="https://github.com/user-attachments/assets/e9d5cc57-f96f-444d-8550-87f223ad157d" /></p>
+### BACKUP
+Create a backup on Timeshift, just in case anything breaks.
 
-## BACKUP
-<p align="center">Create a backup on Timeshift, just in case anything breaks.</p>
-
-## CREATE PORTAINER VOLUME
+### CREATE PORTAINER VOLUME
 ```
 sudo docker volume create portainer_data
 ```
 
-## INSTALL PORTAINER
+### INSTALL PORTAINER
 ```
 sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 ```
 
-## POST-INSTALLATION
-<p align="center">After Portainer has finished installing, open a web browser and go to https://localhost:9000 and create an administrator account.</p>
+### POST-INSTALLATION
+After Portainer has finished installing, open a web browser and go to the [Portainer dashboard](https://localhost:9000) and create an administrator account.
