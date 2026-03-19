@@ -6,8 +6,8 @@ services:
       - TZ=America/Chicago
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /docker/homarr:/config
-      - /docker/homarr/data:/data
+      - ./homarr:/config
+      - ./homarr/data:/data
     ports:
       - 7575:7575
     restart: unless-stopped
@@ -20,9 +20,9 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/bazarr:/config
-      - /mnt/HDD1/plex/movies:/movies
-      - /mnt/HDD1/plex/shows:/shows
+      - ./bazarr:/config
+      - /mnt/HDD1/media/movies:/movies
+      - /mnt/HDD1/media/shows:/shows
     ports:
       - 6767:6767
     restart: unless-stopped
@@ -35,8 +35,8 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/lidarr:/config
-      - /mnt/HDD1/music:/music
+      - ./lidarr:/config
+      - /mnt/HDD1/media/music:/music
       - /mnt/HDD5/downloads:/downloads
     ports:
       - 8686:8686
@@ -50,8 +50,8 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/radarr:/config
-      - /mnt/HDD1/plex/movies:/movies
+      - ./radarr:/config
+      - /mnt/HDD1/media/movies:/movies
       - /mnt/HDD5/downloads:/downloads
     ports:
       - 7878:7878
@@ -65,8 +65,8 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/readarr:/config
-      - /mnt/HDD1/books/:/books
+      - ./readarr:/config
+      - /mnt/HDD1/media/books/:/books
       - /mnt/HDD5/downloads:/downloads
     ports:
       - 8787:8787
@@ -80,7 +80,7 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/seerr:/config
+      - ./seerr:/config
     ports:
       - 5055:5055
     restart: unless-stopped
@@ -93,8 +93,8 @@ services:
       - PGID=1000
       - TZ=America/Chicago
     volumes:
-      - /docker/sonarr:/config
-      - /mnt/HDD1/plex/shows:/shows
+      - ./sonarr:/config
+      - /mnt/HDD1/media/shows:/shows
       - /mnt/HDD5/downloads:/downloads
     ports:
       - 8989:8989
