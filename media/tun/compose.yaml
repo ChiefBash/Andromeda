@@ -1,3 +1,8 @@
+# As of lately, the Gluetun container has not been working. 
+# It constantly gives a TLS handshake error and DNS leaks to Cloudflare.
+# This is despite having updating the ExpressVPN server.json file multiple times.
+# Keeping the this configuration file here just in case things start working again.
+
 services:
   gluetun:
     image: qmcgaw/gluetun
@@ -15,16 +20,12 @@ services:
       - 9696:9696 #prowlarr
       - 34400:34400 #threadfin
     volumes:
-      - home/chiefbash/docker/tun/gluetun:/gluetun
+      - ./gluetun:/gluetun
     environment:
-      - VPN_SERVICE_PROVIDER=airvpn
+      - VPN_SERVICE_PROVIDER=expressvpn
       - VPN_TYPE=wiregaurd
-      - FIREWALL_VPN_INPUT_PORTS=port
-      - WIREGUARD_PRIVATE_KEY=key
-      - WIREGUARD_PRESHARED_KEY=key
-      - WIREGUARD_ADDRESSES=ip
-      - SERVER_COUNTRIES=country
-      - SREVER_CITIES=cities
+      - OPENVPN_USER=user
+      - OPENVPN_PASSWORD=password
     healthcheck:
       test: ping -c 1 www.google.com || exit 1
       interval: 60s
@@ -62,7 +63,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - /home/chiefbash/docker/tun/firefox:/config
+      - ./firefox:/config
     shm_size: "1gb"
     depends_on:
       - gluetun
@@ -76,7 +77,7 @@ services:
       - LOG_LEVEL=info
       - LOG_HTML=false
       - CAPTCHA_SOLVER=none
-      - TZ=${TZ}
+      - TZ=America/Chicago
     depends_on:
       gluetun:
         condition: service_healthy
@@ -88,11 +89,11 @@ services:
     container_name: prowlarr
     network_mode: service:gluetun
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
     volumes:
-      - /home/chiefbash/docker/tun/prowlarr:/config
+      - ./prowlarr:/config
     depends_on:
       gluetun:
         condition: service_healthy
@@ -112,14 +113,14 @@ services:
     labels:
       - deunhealth.restart.on.unhealthy=true
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
       - WEBUI_PORT=8585
-      - TORRENTING_PORT=${FIREWALL_VPN_INPUT_PORTS}
+      - TORRENTING_PORT=6881
     volumes:
-      - /home/chiefbash/docker/tun/qbittorrent/config:/config
-      - /mnt/HDD16/downloads:/downloads
+      - ./qbittorrent:/config
+      - /mnt/HDD5/downloads:/downloads
     depends_on:
       gluetun:
         condition: service_healthy
@@ -137,12 +138,12 @@ services:
     container_name: threadfin
     network_mode: service:gluetun
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
+      - PUID=1000
+      - PGID=1000
       - THREADFIN_PORT=34400
     volumes:
-      - /home/chiefbash/docker/tun/threadfin/conf:/home/threadfin/conf
-      - /home/chiefbash/docker/tun/threadfin/tmp:/tmp/threadfin:rw
+      - ./threadfin/conf:/home/threadfin/conf
+      - ./threadfin/tmp:/tmp/threadfin:rw
     depends_on:
       - gluetun
     restart: unless-stopped
