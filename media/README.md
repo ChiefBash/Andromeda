@@ -1,4 +1,4 @@
-<h1>Directory Map</h1>
+# Directory Map
 
 ```
 Docker map here
@@ -8,11 +8,11 @@ Docker map here
 Media drive here
 ```
 
-<h1>Hardware Acceleration</h1>
+# Hardware Acceleration
 
 To set up hardware acceleration for Plex in a docker container, use [this guide form TizuTech](https://tizutech.com/plex-transcoding-with-docker-nvidia-gpu/). This guide is from Feburary 2024 so the driver information is inaccurate, but the process is the same. Just in case the website is inaccessable, here ae the instructions:
 
-<h3>Install NVIDIA Drivers</h3>
+### Install NVIDIA Drivers
 
 After installing Ubuntu, the drivers for NVIDIA should install alongside installnig the operating system (this is if you allow Ubuntu to check for third-party drivers; this will install NVIDIA proprietary drivers). If, for whatever reason, this does not happen, follow these steps:
 
@@ -35,7 +35,7 @@ sudo apt search nvidia-encode
 sudo apt install libnvidia-encode-550-server
 ```
 
-<h3>nvidia-smi</h3>
+### nvidia-smi
 
 Enter the `nvidia-smi` command after the driver(s) installation is complete. If the drivers were installed correctly, the terminal should display something like this:
 
@@ -64,11 +64,11 @@ nvidia-smi
 +-----------------------------------------------------------------------------+
 ```
 
-<h3>NVIDIA Container Toolkit</h3>
+### NVIDIA Container Toolkit
 
 After installing the drivers, the container toolkit needs to be installed. This is what officially allows the Docker container to use information from the NVIDIA graphics card.
 
-<h3>Setting Up The Package Repository</h3>
+### Setting Up The Package Repository
 
 In my experience, this command did not work for me. It may be because I used it in a different Linux distro, but if for some reason this command doesn't work, skip to the next step.
 
@@ -76,7 +76,7 @@ In my experience, this command did not work for me. It may be because I used it 
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list |     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
 
-<h3>Installing NVIDIA Container Toolkit</h3>
+### Installing NVIDIA Container Toolkit
 
 ```
 # Update and install NVIDIA Container Toolkit
@@ -93,7 +93,7 @@ sudo systemctl restart docker
 docker run --gpus all nvidia/cuda:11.5.2-base-ubuntu20.04 nvidia-smi
 ```
 
-<h3>Docker Compose Options</h3>
+### Docker Compose Options
 
 After the drivers and container toolkit are isntalled, the options can now be added to the Docker COmpose file. When using these options, this will only work with the [LinuxServer.io docker image of Plex](https://docs.linuxserver.io/images/docker-plex/). From what I understand, these settings will not work with other images of Plex. This image will allow transcoding to work correctly when using the graphics card. Below is an example of the container toolkit kit being implemeted:
 
@@ -128,7 +128,7 @@ services:
     restart: unless-stopped
 ```
 
-<h3>Update Plex Settings</h3>
+### Update Plex Settings
 
 Log in to the Plex server, go to Setting in the top-right corner.
 
