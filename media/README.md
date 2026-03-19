@@ -131,6 +131,7 @@ services:
 <h3>Update Plex Settings</h3>
 
 Log in to the Plex server, go to Setting in the top-right corner.
+
 <img width="250" height="53" alt="image" src="https://github.com/user-attachments/assets/321fd465-0783-463b-9682-fbe3c8b961d1" />
 
 On the left-sidebar, scroll down to <b>Transcoder</b> and check the following boxes: <b>Use hardware acceleration when avaialble</b>, <b>Use hardware-accelerated video encoding</b> and <b>Enable HEVC Optimaization (experimental)</b>. Select the graphics card for the <b>Hardware transcoding device</b> and save changes when complete.
