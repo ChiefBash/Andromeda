@@ -1,1 +1,15 @@
-
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - ./jellyfin:/config
+      - /mnt/HDD1/media/movies:/movies
+      - /mnt/HDD1/media/shows:/shows
+    ports:
+      - 8096:8096
+    restart: unless-stopped
