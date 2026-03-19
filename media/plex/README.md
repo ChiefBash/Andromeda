@@ -1,3 +1,3 @@
-<p align="center"><img width="680" height="274" alt="image" src="https://github.com/user-attachments/assets/661fa899-7f00-4613-b60e-4b31e3baa460" /></p>
+<p align="center"><img width="300" height="138" alt="image" src="https://github.com/user-attachments/assets/b409128b-c3b6-48bd-ae7e-2837d0139154" /></p>
 
 # Plex
