@@ -24,6 +24,14 @@
 
 
 
+# Flaresolverr
+
+
+
+---
+
+
+
 # qBittorrent
 
 
