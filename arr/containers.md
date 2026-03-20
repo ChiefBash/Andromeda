@@ -124,6 +124,8 @@ services:
 
 # Seerr
 
+Seerr (f.k.a. Overseerr) is a service used to request media, mainly movies, TV shows, anime and cartoons.
+
 ```
 services:
   seerr:
