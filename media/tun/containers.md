@@ -2,7 +2,37 @@
 
 # Gluetun
 
-
+```
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 3000:3000 #firefox
+      - 3001:3001 #firefox https
+      - 6881:6881 #qbittorrent torrent
+      - 8191:8191 #flaresolverr
+      - 8585:8585 #qbittorrent webui
+      - 9696:9696 #prowlarr
+      - 34400:34400 #threadfin
+    volumes:
+      - ./gluetun:/gluetun
+    environment:
+      - VPN_SERVICE_PROVIDER=expressvpn
+      - VPN_TYPE=wiregaurd
+      - OPENVPN_USER=user
+      - OPENVPN_PASSWORD=password
+    healthcheck:
+      test: ping -c 1 www.google.com || exit 1
+      interval: 60s
+      timeout: 20s
+      retries: 5
+    restart: unless-stopped
+```
 
 ---
 
@@ -10,7 +40,20 @@
 
 # Deunhealth
 
-
+```
+services:
+  deunhealth:
+    image: qmcgaw/deunhealth
+    container_name: deunhealth
+    network_mode: none
+    environment:
+      - LOG_LEVEL=info
+      - HEALTH_SERVER_ADDRESS=127.0.0.1:9999
+      - TZ=${TZ}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+```
 
 ---
 
@@ -18,6 +61,32 @@
 
 # Firefox
 
+```
+services:
+  firefox:
+    image: lscr.io/linuxserver/firefox:latest
+    container_name: firefox
+    network_mode: service:gluetun
+    security_opt:
+      - seccomp:unconfined
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [compute,video,graphics,utility]
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ./firefox:/config
+    shm_size: "1gb"
+    depends_on:
+      - gluetun
+    restart: unless-stopped
+```
 
 
 ---
@@ -26,7 +95,56 @@
 
 # Flaresolverr
 
+```
+services:
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    network_mode: service:gluetun
+    environment:
+      - LOG_LEVEL=info
+      - LOG_HTML=false
+      - CAPTCHA_SOLVER=none
+      - TZ=America/Chicago
+    depends_on:
+      gluetun:
+        condition: service_healthy
+        restart: true
+    restart: unless-stopped
+```
 
+---
+
+
+
+# Prwolarr
+
+
+
+```
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    network_mode: service:gluetun
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - ./prowlarr:/config
+    depends_on:
+      gluetun:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test: ping -c 1 www.google.com || exit 1
+      interval: 60s
+      retries: 3
+      start_period: 20s
+      timeout: 10s
+    restart: unless-stopped
+```
 
 ---
 
@@ -34,15 +152,36 @@
 
 # qBittorrent
 
+```
+services:
 
-
----
-
-
-
-# Prowlarr
-
-
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    network_mode: service:gluetun
+    labels:
+      - deunhealth.restart.on.unhealthy=true
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - WEBUI_PORT=8585
+      - TORRENTING_PORT=6881
+    volumes:
+      - ./qbittorrent:/config
+      - /mnt/HDD5/downloads:/downloads
+    depends_on:
+      gluetun:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test: ping -c 1 www.google.com || exit 1
+      interval: 60s
+      retries: 3
+      start_period: 20s
+      timeout: 10s
+    restart: unless-stopped
+```
 
 ---
 
@@ -51,3 +190,21 @@
 # Threadfin
 
 Threadfin (f.k.a. xTeVe) is in simplest terms, a virtual DVR that you can use to play/record/live stream IPTV.
+
+```
+services:
+  threadfin:
+    image: mgoerentz/threadfin:latest
+    container_name: threadfin
+    network_mode: service:gluetun
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - THREADFIN_PORT=34400
+    volumes:
+      - ./threadfin/conf:/home/threadfin/conf
+      - ./threadfin/tmp:/tmp/threadfin:rw
+    depends_on:
+      - gluetun
+    restart: unless-stopped
+```
