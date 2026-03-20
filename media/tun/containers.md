@@ -1,4 +1,4 @@
-
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/ea72e8c4-1c00-44be-830e-d3233cf6608f" /></p>
 
 # Gluetun
 
@@ -36,7 +36,7 @@ services:
 
 ---
 
-
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/ba5c582f-c160-4c1c-8691-8465817485c8" /></p>
 
 # Deunhealth
 
@@ -57,7 +57,8 @@ services:
 
 ---
 
-
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/cabddb6c-2ec1-44ac-99f3-08082d42cf36" />
+</p>
 
 # Firefox
 
@@ -91,7 +92,8 @@ services:
 
 ---
 
-
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/6e19bfc1-957c-4934-8e42-e37f670f8e9b" />
+</p>
 
 # Flaresolverr
 
@@ -119,7 +121,7 @@ services:
 
 # Prwolarr
 
-
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/0a4d39e0-6993-436f-b6d4-81d2adbb1aec" /></p>
 
 ```
 services:
@@ -148,7 +150,7 @@ services:
 
 ---
 
-
+<p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/b177e013-5044-40c2-88aa-cc503defe3a0" /></p>
 
 # qBittorrent
 
