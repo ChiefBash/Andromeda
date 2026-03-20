@@ -36,3 +36,19 @@ services:
 <p align="center"><img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/01584339-8e70-474f-bf6b-89694585309d" /></p>
 
 # Tautulli
+
+```
+services:
+  tautulli:
+    image: lscr.io/linuxserver/tautulli:latest
+    container_name: tautulli
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - ./tautulli:/config
+    ports:
+      - 8181:8181
+    restart: unless-stopped
+```
