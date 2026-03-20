@@ -25,6 +25,24 @@ services:
 
 # Bazarr
 
+```
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - ./bazarr:/config
+      - /mnt/HDD1/media/movies:/movies
+      - /mnt/HDD1/media/shows:/shows
+    ports:
+      - 6767:6767
+    restart: unless-stopped
+```
+
 ---
 
 <p align="center"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/aba41f42-1a61-4720-aeea-a72f84b3ac05" /></p>
