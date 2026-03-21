@@ -93,7 +93,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ### Check the status of Docker & enable (if necessary)
 
 ```
-sudo suystemctl status docker
+sudo systemctl status docker
 sudo systemctl enable docker
 ```
 
