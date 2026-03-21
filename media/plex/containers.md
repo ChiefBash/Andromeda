@@ -28,6 +28,8 @@ services:
       - /mnt/HDD1/media/movies:/movies
       - /mnt/HDD1/media/shows:/shows
       - /mnt/HDD1/media/videos:/videos
+      - /mnt/HDD1/media/christmas:/chirstmas
+      - /mnt/HDD1/media/halloween:/halloween
     restart: unless-stopped
 ```
 
