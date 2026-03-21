@@ -1,4 +1,4 @@
-## Ubuntu
+# Ubuntu
 
 ### Language
 
@@ -37,21 +37,21 @@ Select the wired connection option. If a worse case scenario, Wi-Fi will work. *
 
 ---
 
-## Timeshift
+# Timeshift
 
 ---
 
-## GNOME Extensions
+# GNOME Extensions
 
 ---
 
-## Oh-my-ZSH
+# Oh-my-ZSH
 
 ---
 
 <p align="center"><img width="336" height="287" alt="image" src="https://github.com/user-attachments/assets/469d28d2-1990-46b0-bbd6-584572ef4c90" /></p>
 
-## Docker
+# Docker
 
 ### Update & upgrade Ubuntu
 
@@ -114,7 +114,7 @@ sudo docker run hello-world
 
 <p align="center"><img width="610" height="199" src="https://github.com/user-attachments/assets/fbc21779-6292-42b0-b302-6ff1dd262e9c" /></p>
 
-## Portainer
+# Portainer
 
 ### Backup
 
@@ -133,3 +133,63 @@ sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/do
 ### Post-installation
 
 After Portainer has finished installing, open a web browser and go to the [Portainer dashboard](https://localhost:9000) and create an administrator account.
+
+---
+
+# Oracle VirtualBox
+
+### Update System and Install Repository Tools
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl ca-certificates gpg lsb-release -y
+```
+
+### Import VirtualBox GPG Key
+
+```
+curl -fSsL https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor | sudo tee /usr/share/keyrings/virtualbox.gpg > /dev/null
+```
+
+### Add VirtualBox Repository
+
+```
+cat <<EOF | sudo tee /etc/apt/sources.list.d/virtualbox.sources
+Types: deb
+URIs: http://download.virtualbox.org/virtualbox/debian
+Suites: $(lsb_release -cs)
+Components: contrib
+Architectures: $(dpkg --print-architecture)
+Signed-By: /usr/share/keyrings/virtualbox.gpg
+EOF
+```
+
+### Install VirtualBox
+
+```
+sudo apt install virtualbox-7.2 build-essential dkms linux-headers-$(uname -r) -y
+```
+
+### Verify Installation Source
+
+```
+apt-cache policy virtualbox-7.2
+```
+
+### Check VirtualBox service status
+
+```
+sudo systemctl status vboxdrv
+```
+
+### Enable VirtualBox service ( if required)
+
+```
+sudo systemctl enable vboxdrv --now
+```
+
+### Add user to vboxusers group
+
+```
+sudo usermod -a -G vboxusers $USER
+```
