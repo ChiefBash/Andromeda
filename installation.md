@@ -43,6 +43,13 @@ Select the wired connection option. If a worse case scenario, Wi-Fi will work. *
 
 # GNOME Extensions
 
+```
+sudo apt install gnome-shell-extensions -y
+```
+
+<img width="1814" height="718" alt="image" src="https://github.com/user-attachments/assets/fe174a2c-c85d-4e03-b441-0cdfca800f96" />
+
+
 ---
 
 # Oh-my-ZSH
