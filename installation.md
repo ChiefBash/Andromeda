@@ -63,33 +63,47 @@ sudo apt update && sudo apt upgrade -y
 
 Before installing Docker, create a backup on Timeshift, just in case something breaks.
 
-### Install Docker
+### Add Docker's official GPG key
 
 ```
-sudo apt install docker -y
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
 
-### Start & enable Docker
+### Add the repository to apt sources
 
 ```
-sudo systemctl start docker
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
 ```
 
+### Install the latest version of Docker
+
 ```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+```
+
+### Check the status of Docker & enable (if necessary)
+
+```
+sudo suystemctl status docker
 sudo systemctl enable docker
 ```
 
-### Permission change
+### Optional: Create a Docker container (hello-world)
 
 ```
-sudo usermod -aG docker chiefbash
+sudo docker run hello-world
 ```
 
-### Install Docker Compose
-
-```
-sudo apt install docker-compose -y
-```
+*Docker configuration(s) in the terminal must be entered as `sudo`, otherwise the command will not work.*
 
 ---
 
