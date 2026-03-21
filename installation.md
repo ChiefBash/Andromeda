@@ -14,7 +14,47 @@
 
 ---
 
-## Docker & Docker Compose
+<p align="center"><img width="336" height="287" alt="image" src="https://github.com/user-attachments/assets/469d28d2-1990-46b0-bbd6-584572ef4c90" /></p>
+
+## Docker
+
+### Update & upgrade Ubuntu
+
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+### Backup
+
+Before installing Docker, create a backup on Timeshift, just in case something breaks.
+
+### Install Docker
+
+```
+sudo apt install docker -y
+```
+
+### Start & enable Docker
+
+```
+sudo systemctl start docker
+```
+
+```
+sudo systemctl enable docker
+```
+
+### Permission change
+
+```
+sudo usermod -aG docker chiefbash
+```
+
+### Install Docker Compose
+
+```
+sudo apt install docker-compose -y
+```
 
 ---
 
