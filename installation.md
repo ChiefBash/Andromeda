@@ -39,6 +39,24 @@ Select the wired connection option. If a worse case scenario, Wi-Fi will work. *
 
 # Timeshift
 
+<img width="740" height="820" alt="image" src="https://github.com/user-attachments/assets/de55df97-7e9c-4350-b349-680741bff000" />
+
+<img width="739" height="821" alt="image" src="https://github.com/user-attachments/assets/66acd348-8c72-462d-8607-35b7b4c9dadd" />
+
+<img width="738" height="818" alt="image" src="https://github.com/user-attachments/assets/52ef9040-4e0e-4948-b05e-38ca51ac04f5" />
+
+<img width="738" height="816" alt="image" src="https://github.com/user-attachments/assets/ac64a486-9fed-4f94-833e-b6fbdda06263" />
+
+<img width="738" height="819" alt="image" src="https://github.com/user-attachments/assets/f16bae9c-86fa-4326-8823-1b9a7d020268" />
+
+<img width="984" height="786" alt="image" src="https://github.com/user-attachments/assets/b5924e89-1a94-4941-bb5a-2c3443000975" />
+
+<img width="987" height="788" alt="image" src="https://github.com/user-attachments/assets/e373a939-c8c5-43c6-a900-e16da0b6100a" />
+
+<img width="985" height="781" alt="image" src="https://github.com/user-attachments/assets/f83d8afb-2cfc-461a-8bfa-c993948d03b3" />
+
+<img width="985" height="786" alt="image" src="https://github.com/user-attachments/assets/bd18a704-7203-46ab-8bf7-4e4302ff11b0" />
+
 ---
 
 # GNOME Extensions
@@ -145,60 +163,4 @@ After Portainer has finished installing, open a web browser and go to the [Porta
 
 ---
 
-# Oracle VirtualBox
-
-### Update System and Install Repository Tools
-
-```
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl ca-certificates gpg lsb-release -y
-```
-
-### Import VirtualBox GPG Key
-
-```
-curl -fSsL https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor | sudo tee /usr/share/keyrings/virtualbox.gpg > /dev/null
-```
-
-### Add VirtualBox Repository
-
-```
-cat <<EOF | sudo tee /etc/apt/sources.list.d/virtualbox.sources
-Types: deb
-URIs: http://download.virtualbox.org/virtualbox/debian
-Suites: $(lsb_release -cs)
-Components: contrib
-Architectures: $(dpkg --print-architecture)
-Signed-By: /usr/share/keyrings/virtualbox.gpg
-EOF
-```
-
-### Install VirtualBox
-
-```
-sudo apt install virtualbox-7.2 build-essential dkms linux-headers-$(uname -r) -y
-```
-
-### Verify Installation Source
-
-```
-apt-cache policy virtualbox-7.2
-```
-
-### Check VirtualBox service status
-
-```
-sudo systemctl status vboxdrv
-```
-
-### Enable VirtualBox service ( if required)
-
-```
-sudo systemctl enable vboxdrv --now
-```
-
-### Add user to vboxusers group
-
-```
-sudo usermod -a -G vboxusers $USER
-```
+# QEMU/KVM
